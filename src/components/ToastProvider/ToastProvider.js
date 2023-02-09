@@ -5,6 +5,12 @@ export const ToastContext = React.createContext();
 function ToastProvider({ children }) {
   const [toasts, setToasts] = React.useState([]);
 
+  /*
+  JOSH SOLUTION is that event handler for dismiss toasts should live here, rather than in ToastShelf where I put it
+  Might have different places that show toasts, e.g. in different views, different formatting options, different arrangement for mobile
+  No matter what we do with toast behavior, we always want the shortcut to be wired up
+  */
+
   const addToast = React.useCallback((message, variant) => {
     setToasts((v) => {
       const oldV = [...v];

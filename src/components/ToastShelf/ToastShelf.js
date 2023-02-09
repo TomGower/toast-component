@@ -24,7 +24,7 @@ function ToastShelf() {
   // }, [deleteAllToasts])
 
   return (
-    <ol className={styles.wrapper} role="region" aria-live="assertive" aria-label="Notification">
+    <ol className={styles.wrapper} role="region" aria-live="polite" aria-label="Notifications"> {/* "polite" is more appropriate than "assertive" */}
       {toasts.map(({ id, message, variant}) =>
         <li className={styles.toastWrapper} key={id}>
           <Toast variant={variant} id={id} message={message} />

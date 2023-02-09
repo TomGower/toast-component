@@ -11,7 +11,7 @@ const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
   const [message, setMessage] = React.useState('');
-  const [variant, setVariant] = React.useState('notice');
+  const [variant, setVariant] = React.useState('notice'); // VARIANT_OPTIONS[0] is better choice
   // const [showToast, setShowToast] = React.useState(false);
   const [showToasts, setShowToasts] = React.useState(false);
   // const [toasts, setToasts] = React.useState([]);
@@ -67,7 +67,7 @@ function ToastPlayground() {
       {/* {showToasts && <ToastShelf toasts={toasts} handleDismiss={handleDismiss} />} */}
       {showToasts && <ToastShelf />}
 
-      <div className={styles.controlsWrapper}>
+      <div className={styles.controlsWrapper}> {/* form should be here, around Radio Buttons and Message Textarea */}
         <div className={styles.row}>
           <label
             htmlFor="message"
